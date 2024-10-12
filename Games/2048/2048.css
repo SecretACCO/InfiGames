@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Space between the tiles */
+    width: 340px; /* Increased width for better centering */
+    height: 340px; /* Increased height for better centering */
+    background-color: #3e8a2e; /* Darker green for the board background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 10px; /* Padding for space inside the border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    margin: 0 auto; /* Center the board horizontally */
+}
+
+.tile {
+    width: 70px; /* Size of each tile */
+    height: 70px; /* Size of each tile */
+    background-color: #bbd9b1; /* Light green */
+    color: #1f4037; /* Dark green text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; /* Font size for numbers */
+    border-radius: 5px; /* Rounded corners for tiles */
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+/* Tile colors based on values */
+.tile-2 { background-color: #e2f0d8; }
+.tile-4 { background-color: #c2e7a7; }
+.tile-8 { background-color: #9fd87c; }
+.tile-16 { background-color: #7cbd5c; }
+.tile-32 { background-color: #59a942; }
+.tile-64 { background-color: #3e8a2e; }
+.tile-128 { background-color: #2a6d24; }
+.tile-256 { background-color: #1e571c; }
+.tile-512 { background-color: #183d15; }
+.tile-1024 { background-color: #0e290e; }
+.tile-2048 { background-color: #000; color: #fff; }
+
+/* Restart button styling */
+#restart-button {
+    margin-top: 20px;
+    background-color: #4caf50; /* Green button */
+    color: white;
+    font-size: 1.2rem; /* Font size for button */
+    padding: 10px 20px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for button */
+#restart-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Score display styling */
+#score {
+    margin-top: 10px; /* Margin above the score */
+    font-size: 1.5rem; /* Font size for score */
+}

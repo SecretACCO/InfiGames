@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfiGames Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            font-family: 'Arial', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard-container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ff4b2b; /* Orange color */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #ff416c; /* Darker orange on hover */
+        }
+        #reportsList {
+            margin-top: 20px;
+            text-align: left;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .report-item {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px; /* Location of the box */
+        }
+
+        .modal-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome to InfiGames Dashboard</h1>
+        <button onclick="logout()">Logout</button>
+        <button onclick="viewReports()">View Reports</button>
+        <button onclick="openAnnouncementModal()">Announcement</button>
+
+        <!-- Reports List -->
+        <div id="reportsList"></div>
+    </div>
+        <!-- Announcement Modal -->
+        <div id="announcementModal" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeAnnouncementModal()">&times;</span>
+              <h2>New Announcement</h2>
+              <textarea id="announcementText"  placeholder="Type your announcement here..."></textarea>
+              <br>
+              <button onclick="submitAnnouncement()">Submit</button>
+          </div>
+      </div>
+  </div>
+    <script>
+        // Check if the user is logged in
+        if (!localStorage.getItem('loggedIn')) {
+            window.location.href = 'login.html';
+        }
+
+        // Check if the user is admin
+        const isAdmin = localStorage.getItem('isAdmin') === 'true';
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = 'login.html';
+        }
+
+        function viewReports() {
+            const reportsList = document.getElementById('reportsList');
+            reportsList.innerHTML = ''; // Clear previous reports
+
+            // Get reports from localStorage
+            const reports = JSON.parse(localStorage.getItem('bugReports')) || [];
+
+            if (!isAdmin) {
+                alert("Permission Denied: You are not authorized to view bug reports.");
+                return;
+            }
+
+            if (reports.length === 0) {
+                reportsList.innerHTML = '<p>No bug reports available.</p>';
+                return;
+            }
+
+            // Display reports
+            reports.forEach((report) => {
+                const reportDiv = document.createElement('div');
+                reportDiv.classList.add('report-item');
+                reportDiv.innerHTML = `<strong>${report.name}</strong>: ${report.bug}`;
+                reportsList.appendChild(reportDiv);
+            });
+        }
+        function openAnnouncementModal() {
+            document.getElementById('announcementModal').style.display = 'block';
+        }
+
+        function closeAnnouncementModal() {
+            document.getElementById('announcementModal').style.display = 'none';
+        }
+
+        function submitAnnouncement() {
+            const announcement = document.getElementById('announcementText').value;
+            if (announcement.trim() === '') {
+                alert("Please enter an announcement.");
+                return;
+            }
+
+            // Store the announcement in localStorage
+            const announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+            announcements.push(announcement);
+            localStorage.setItem('announcements', JSON.stringify(announcements));
+
+            alert("Announcement submitted successfully!");
+            closeAnnouncementModal();
+
+            // Notify users (you can implement this with a more complex logic if needed)
+            alert("All users will be notified of the new announcement!");
+        }
+    </script>
+</body>
+</html>

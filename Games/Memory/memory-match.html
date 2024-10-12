@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Game</title>
+    <link rel="stylesheet" href="memory-match.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Memory Match Game</h1>
+        <div class="grid" id="grid"></div>
+        <div class="scoreboard">
+            <h2>Moves: <span id="move-count">0</span></h2>
+        </div>
+        <button id="restart-button">Restart Game</button>
+        <div id="settings">
+            <label for="move-input">Enter Number of Moves:</label>
+            <input type="number" id="move-input" min="1" placeholder="Enter moves" required>
+            <button id="set-moves-button">Set Moves</button>
+        </div>
+        
+
+        
+        <div id="grid"></div> <!-- This is your game board -->
+        
+        <div id="win-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-win-modal">&times;</span>
+                <h2>Congratulations!</h2>
+                <p>You found all pairs!</p>
+            </div>
+        </div>
+        
+        <div id="game-over-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-game-over-modal">&times;</span>
+                <h2>Game Over!</h2>
+                <p>You have reached the maximum number of moves.</p>
+            </div>
+        </div>
+    
+    <footer>
+        <p>@2024 Mehul</p>
+    </footer>
+
+    <script src="memory-match.js"></script>
+</body>
+</html>

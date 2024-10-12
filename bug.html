@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Bug</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles go here */
+        body {
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            font-family: 'Arial', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ff4b2b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #ff416c;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #000;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px; /* Adjust height as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Report a Bug</h2>
+        <input type="text" id="bugReporterName" placeholder="Your Name" required>
+        <textarea id="bugDescription" placeholder="Describe the bug" required></textarea>
+        <button onclick="submitBugReport()">Submit</button>
+    </div>
+
+    <script>
+        function submitBugReport() {
+            const name = document.getElementById('bugReporterName').value;
+            const bug = document.getElementById('bugDescription').value;
+
+            // Get existing reports from localStorage
+            let reports = JSON.parse(localStorage.getItem('bugReports')) || [];
+            reports.push({ name, bug });
+
+            // Save updated reports to localStorage
+            localStorage.setItem('bugReports', JSON.stringify(reports));
+
+            // Check if the user is admin
+            const isAdmin = localStorage.getItem('isAdmin') === 'true';
+
+            if (isAdmin) {
+                // Redirect to dashboard for admin
+                alert("Bug report submitted successfully!");
+                window.location.href = 'dashboard/dashboard.html';
+            } else {
+                // Show permission denied for non-admin
+                alert("Permission Denied: You are not authorized to view bug reports.");
+                window.location.href = 'dashboard/login.html'; // Redirect to login or stay on page
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Challenge Game</title>
+    <link rel="stylesheet" href="drawing.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Drawing Challenge Game</h1>
+        <div class="timer" id="timer">Time Left: <span id="time">60</span> seconds</div>
+        <div class="canvas-container">
+            <div id="drawingPad">
+                <canvas id="drawingCanvas"></canvas>
+            </div>
+            <div id="imageContainer">
+                <img id="aiImage" src='file:///C:/Users/mehul/Downloads/InfiGames/Image/image.png' alt="AI generated image" style="width: 100%; height: auto; border: 2px solid green;">
+
+            </div>
+        </div>
+        <button id="submitDrawing">Submit Drawing</button>
+        <div id="result"></div>
+    </div>
+
+    <script src="drawing.js">
+        const images = ['image.png', 'image.png', 'image.png', 'image.png']; // List of image files
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+    hehe = `file:///C:/Users/mehul/Downloads/InfiGames/Image/${randomImage}`; // Set AI image source
+    </script>
+</body>
+</html>

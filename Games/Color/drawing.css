@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1f4037, #99f2c8); /* Green gradient background */
+    font-family: 'Arial', sans-serif;
+    color: #fff; /* White text color for contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for game container */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 80%;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#drawingPad {
+    border: 2px solid #ff4b2b; /* Orange border */
+    background-color: white; /* Canvas background */
+    width: 50%;
+    height: 300px;
+    padding: 5px; /* Padding for some space around canvas */
+}
+
+#drawingCanvas {
+    width: 100%; /* Full width of the drawing pad */
+    height: 100%; /* Full height of the drawing pad */
+}
+
+#imageContainer {
+    border: 2px solid #32CD32; /* Green border */
+    width: 50%; /* Adjusted for visual balance */
+    height: 300px; /* Match height of drawing pad */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the image vertically */
+}
+
+#aiImage {
+    max-width: 100%; /* Maintain responsiveness */
+    max-height: 100%; /* Maintain responsiveness */
+    border: 2px solid #32CD32; /* Green border */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+}
+
+button {
+    background-color: #ff4b2b; /* Orange color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff416c; /* Darker orange on hover */
+}
+
+#result {
+    margin-top: 20px;
+    color: white;
+}

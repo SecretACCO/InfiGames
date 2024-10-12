@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex; /* Flexbox for side-by-side layout */
+    flex-direction: column; /* Vertical layout */
+    justify-content: flex-start; /* Align items at the start */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 80%; /* Width adjustment */
+    max-width: 800px; /* Maximum width for larger screens */
+}
+
+#settings {
+    margin-bottom: 20px; /* Space above settings */
+    text-align: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* Change number of columns as needed */
+    grid-gap: 10px;
+    margin: 20px auto;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4b2b;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.card.flipped {
+    background-color: #ff416c; /* Different color for flipped state */
+    transform: scale(1.1);
+}
+
+#move-count-display {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: white; /* Ensure visibility */
+}
+
+#move-input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#set-moves-button {
+    padding: 10px 15px;
+    background-color: #ff4b2b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#set-moves-button:hover {
+    background-color: #ff416c;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Push footer to the bottom */
+    width: 100%; /* Full width */
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: lightgray;
+    text-align: center;
+}
+
+button {
+    background-color: #ff4b2b;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff416c;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: rgba(30, 30, 30, 0.9); /* Dark background for modal content */
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    text-align: center;
+    border-radius: 10px;
+    color: #fff; /* White text color for better visibility */
+}
+
+.close-modal {
+    color: #ff4b2b; /* Bright color for close button */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #ff416c; /* Change color on hover */
+}

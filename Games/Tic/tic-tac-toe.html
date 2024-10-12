@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="tic-tac-toe.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="tic-tac-toe">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+
+        <div class="side-panel">
+            <div class="score-board">
+                <h2>Score</h2>
+                <p>X: <span id="x-score">0</span></p>
+                <p>O: <span id="o-score">0</span></p>
+            </div>
+            <button id="rematch-btn">Clear</button>
+        </div>
+    </div>
+
+    <script src="tic-tac-toe.js"></script>
+</body>
+</html>

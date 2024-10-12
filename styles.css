@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+.login-signup button {
+    background-color: #ff4b2b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-signup button:hover {
+    background-color: #ff416c;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin-top: 20px;
+}
+
+.games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.game-buttons button {
+    background-color: #ff4b2b;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 200px; /* Fixed width for buttons */
+}
+
+#usernameBox {
+    margin-top: 20px;
+    color: white;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: lightgray;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    width: 100%; /* Full width */
+}
+/* Style for the login and signup buttons */
+#auth-buttons {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+}
+
+#auth-buttons button {
+    background-color: #ff4b2b; /* Orange color */
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+    margin: 0 5px; /* Space between buttons */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#auth-buttons button:hover {
+    background-color: #ff416c; /* Darker orange on hover */
+}

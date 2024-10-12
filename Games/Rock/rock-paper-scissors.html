@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="rock-paper-scissors.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="scoreboard">
+            <div>
+                <h2>You: <span id="player-score">0</span></h2>
+            </div>
+            <div>
+                <h2>Robot: <span id="robot-score">0</span></h2>
+            </div>
+        </div>
+        <div class="choices">
+            <button class="choice" data-choice="rock">🪨 Rock</button>
+            <button class="choice" data-choice="paper">📄 Paper</button>
+            <button class="choice" data-choice="scissors">✂️ Scissors</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <!-- Modal for results -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>@2024 Mehul</p>
+    </footer>
+
+    <script src="rock-paper-scissors.js"></script>
+</body>
+</html>

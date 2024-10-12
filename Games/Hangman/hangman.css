@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#wordDisplay {
+    font-size: 2rem; /* Larger font size for the word display */
+    margin: 20px 0;
+}
+
+#wrongLetters {
+    font-size: 1.5rem; /* Increased font size for wrong letters display */
+    margin: 20px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1.2rem; /* Larger font size for input */
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px; /* Fixed width for input fields */
+}
+
+button {
+    background-color: #ff4b2b;
+    color: white;
+    font-size: 1.2rem; /* Increased font size for buttons */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff416c;
+}
+
+#message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+#restartButton {
+    display: none; /* Hidden by default */
+}
